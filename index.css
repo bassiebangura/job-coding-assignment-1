@@ -1,0 +1,66 @@
+/* for debugging purposes */
+* {
+    border: 1px solid red;
+}
+
+/* items on sale pricing */
+.item__salePrice {
+  color: red;
+}
+
+/* body styles */
+body {
+    margin: auto;
+}
+/* items wrapper */
+.items-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin: auto;
+}
+/* 
+images */
+.item__image {
+  max-width: 200px;
+}
+/* item */
+.item {
+  padding: 5px;
+  border: 1px solid #ccc;
+  margin: 3px;
+}
+
+/* start ratings */
+.ratings {
+  position: relative;
+  vertical-align: middle;
+  display: inline-block;
+  color: #b1b1b1;
+  overflow: hidden;
+  display: flex;
+}
+
+.full-stars {
+  position: absolute;
+  left: 0;
+  top: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #fde16d;
+}
+.empty-stars:before,
+.full-stars:before {
+  content: "\2605\2605\2605\2605\2605";
+  font-size: 1.2em;
+}
+.empty-stars:before {
+  -webkit-text-stroke: 1px #848484;
+}
+
+.item__totalRatingcount {
+  padding-left: 8px;
+  padding-top: 7px;
+  font-size: 1em;
+}
