@@ -1,6 +1,7 @@
 /* for debugging purposes */
 * {
-    border: 1px solid red;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
 }
 
 /* items on sale pricing */
@@ -10,26 +11,123 @@
 
 /* body styles */
 body {
-    margin: auto;
+  margin: auto;
 }
 /* items wrapper */
 .items-wrapper {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  display: grid;
+  grid-template-columns: 1fr;
   margin: auto;
 }
 /* 
 images */
 .item__image {
-  max-width: 200px;
+  max-width: 240px;
+  padding: 5px;
+}
+
+/* item name */
+.item__name {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* item brand */
+.setDisplayNone {
+  display: none;
 }
 /* item */
 .item {
   padding: 5px;
-  border: 1px solid #ccc;
-  margin: 3px;
+  margin: 9px auto 5px auto; /* mobile view setting */
+  /* border: 1px solid #ccc; */
+  max-width: 250px; /*add this to media query at 1200px */
+}
+
+.item__detailDescription {
+  visibility: hidden;
+}
+
+/*********************************************************
+                        Media Queries
+
+**********************************************************/
+/* Ipad  horizontal view */
+@media (min-width: 570px) {
+  /* items wrapper */
+  .items-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* images */
+  .item__image {
+    max-width: 240px;
+    padding: 5px;
+  }
+
+  /* item name */
+  .item__name {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  /* item */
+  .item {
+    padding: 5px;
+    margin: 9px auto 5px auto; 
+  
+    max-width: 250px; 
+  }
+}
+
+/* Ipad landscape view */
+@media (min-width: 768px) {
+  /* items wrapper */
+  .items-wrapper {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /*images */
+  .item__image {
+    max-width: 180px;
+    padding: 5px;
+  }
+
+  /* item name */
+  .item__name {
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+  /* item */
+  .item {
+    max-width: 195px;
+  }
+}
+
+/* screen size of 1200px and wider */
+@media (min-width: 1200px) {
+  /* items wrapper */
+  .items-wrapper {
+    
+    grid-template-columns: repeat(6, 1fr);
+   
+  }
+  
+ /*images */
+  .item__image {
+    max-width: 190px;
+    padding: 2px;
+  }
+
+  /* item name
+  .item__name {
+    font-weight: bold;
+    font-size: 1.2em;
+  } */
+
+  /* item */
+  .item {
+    max-width: 195px;
+  }
 }
 
 /* start ratings */
